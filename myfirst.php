@@ -20,7 +20,7 @@ $new_text = str_ireplace($bad_word, '***', $text)
     <div id="container">
 
         <!-- TESTO ORIGINALE E SUA LUNGHEZZA-->
-        <div class="col">
+        <div class="col col-s">
             <h2>TESTO ORIGINALE</h2>
             <p><?= $text?></p>
             <h3>Lunghezza testo&colon; <?= strlen($text)?></h3> 
@@ -28,14 +28,14 @@ $new_text = str_ireplace($bad_word, '***', $text)
         
 
         <!-- SCELTA PAROLA DA CENSURARE DA PARTE DELL'UTENTE -->
-            <form action="" method="get" class="col">
+            <form action="" method="get" class="col" id="form">
                 <h2><label for="bad_word">CENSURA QUESTO TESTO&colon;</label> </h2>                             
                 <input type="text" name="bad_word" id="bad_word" placeholder="Inserisci una parola da censurare...">
                 <button>CENSURA</button>
             </form>
 
         <!-- TESTO CENSURATO E SUA LUNGHEZZA -->
-        <div class="col">
+        <div class="col  col-r">
             <h2>TESTO CENSURATO</h2>
             <?php
             if ($bad_word != '')    
