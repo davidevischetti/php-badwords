@@ -12,26 +12,40 @@ $new_text = str_ireplace($bad_word, '***', $text)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
 <body>
-    <!-- TESTO ORIGINALE E SUA LUNGHEZZA-->
-    <p><?= $text?></p>
-    <h2>Lunghezza testo&colon; <?= strlen($text)?></h2> 
 
-    <!-- SCELTA PAROLA DA CENSURARE DA PARTE DELL'UTENTE -->
-    <form action="" method="get">
-        <label for="bad_word">nome</label>
-        <input type="text" name="bad_word" id="bad_word">
-        <button>clicca</button>
-    </form>
+    <div id="container">
 
-    <!-- TESTO CENSURATO E SUA LUNGHEZZA -->
-    <?php
-    if ($bad_word != '')    
-    echo '<p>' . $new_text . '</p>
-    <h2>Lunghezza testo&colon;' . strlen($new_text) . '</h2>'
-    ?>
+        <!-- TESTO ORIGINALE E SUA LUNGHEZZA-->
+        <div class="col">
+            <h2>TESTO ORIGINALE</h2>
+            <p><?= $text?></p>
+            <h3>Lunghezza testo&colon; <?= strlen($text)?></h3> 
+        </div>
+        
+
+        <!-- SCELTA PAROLA DA CENSURARE DA PARTE DELL'UTENTE -->
+            <form action="" method="get" class="col">
+                <h2><label for="bad_word">CENSURA QUESTO TESTO&colon;</label> </h2>                             
+                <input type="text" name="bad_word" id="bad_word" placeholder="Inserisci una parola da censurare...">
+                <button>CENSURA</button>
+            </form>
+
+        <!-- TESTO CENSURATO E SUA LUNGHEZZA -->
+        <div class="col">
+            <h2>TESTO CENSURATO</h2>
+            <?php
+            if ($bad_word != '')    
+            echo '<p>' . $new_text . '</p>
+            <h3>Lunghezza testo&colon;' . strlen($new_text) . '</h3>'
+            ?>
+        </div>
+
+    </div>
+
 </body>
 </html>
 
