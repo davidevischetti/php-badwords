@@ -27,7 +27,11 @@ $new_text = str_ireplace($bad_word, '***', $text)
     </form>
 
     <!-- TESTO CENSURATO E SUA LUNGHEZZA -->
-    <p><?= $new_text?></p>
-    <h2>Lunghezza testo&colon; <?= strlen($new_text)?></h2>
+    <?php
+    if ($bad_word != '')    
+    echo '<p>' . $new_text . '</p>
+    <h2>Lunghezza testo&colon;' . strlen($new_text) . '</h2>'
+    ?>
 </body>
 </html>
+
